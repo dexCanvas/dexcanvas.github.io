@@ -345,6 +345,85 @@ body {
     margin: 0;
 }
 
+/* Workflow Pipeline */
+.workflow-pipeline {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-top: 3rem;
+}
+
+.pipeline-step {
+    flex: 1;
+    max-width: 350px;
+    text-align: center;
+    padding: 1.5rem;
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    border: 2px solid var(--border-color);
+    transition: all 0.3s ease;
+}
+
+.pipeline-step:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 24px rgba(37, 99, 235, 0.15);
+    border-color: var(--primary-color);
+}
+
+.pipeline-step .step-number {
+    margin: 0 auto 1rem;
+}
+
+.pipeline-step h4 {
+    font-size: 1.25rem;
+    color: var(--text-primary);
+    margin-bottom: 1rem;
+    font-weight: 700;
+}
+
+.pipeline-step p {
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin-top: 1rem;
+}
+
+.gif-container {
+    width: 100%;
+    border-radius: 12px;
+    overflow: hidden;
+    background: var(--light-card);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.gif-container img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 12px;
+}
+
+.pipeline-arrow {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    font-weight: bold;
+    flex-shrink: 0;
+    animation: slideRight 1.5s ease-in-out infinite;
+}
+
+@keyframes slideRight {
+    0%, 100% {
+        transform: translateX(0);
+        opacity: 0.6;
+    }
+    50% {
+        transform: translateX(10px);
+        opacity: 1;
+    }
+}
+
 /* Key Features */
 .key-features {
     display: grid;
@@ -677,6 +756,31 @@ body {
     .workflow-step {
         flex-direction: column;
         text-align: center;
+    }
+
+    .workflow-pipeline {
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .pipeline-step {
+        max-width: 100%;
+    }
+
+    .pipeline-arrow {
+        transform: rotate(90deg);
+        animation: slideDown 1.5s ease-in-out infinite;
+    }
+
+    @keyframes slideDown {
+        0%, 100% {
+            transform: rotate(90deg) translateX(0);
+            opacity: 0.6;
+        }
+        50% {
+            transform: rotate(90deg) translateX(10px);
+            opacity: 1;
+        }
     }
 
     .highlight-box {

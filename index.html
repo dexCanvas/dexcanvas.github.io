@@ -57,34 +57,32 @@
 
                 <div class="workflow-section">
                     <h3 class="section-subtitle-large">Workflow Overview</h3>
-                    <div class="workflow-steps">
-                        <div class="workflow-step">
+                    <div class="workflow-pipeline">
+                        <div class="pipeline-step">
                             <div class="step-number">1</div>
-                            <div class="step-content">
-                                <h4>Object Modeling</h4>
-                                <p>Create diverse 3D object models with varying shapes, sizes, and physical properties</p>
+                            <h4>Motion Capture Data</h4>
+                            <div class="gif-container">
+                                <img src="assets/gif/mocap.gif" alt="Motion Capture Data Collection" loading="lazy">
                             </div>
+                            <p>Collecting manipulation trajectories from motion capture systems</p>
                         </div>
-                        <div class="workflow-step">
+                        <div class="pipeline-arrow">→</div>
+                        <div class="pipeline-step">
                             <div class="step-number">2</div>
-                            <div class="step-content">
-                                <h4>Simulation Training</h4>
-                                <p>Train manipulation policies in high-fidelity physics simulation environments</p>
+                            <h4>RL Trajectory Reconstruction</h4>
+                            <div class="gif-container">
+                                <img src="assets/gif/rl_reconstruction.gif" alt="RL Trajectory Reconstruction" loading="lazy">
                             </div>
+                            <p>Bridging the real-to-sim gap through reinforcement learning reconstruction</p>
                         </div>
-                        <div class="workflow-step">
+                        <div class="pipeline-arrow">→</div>
+                        <div class="pipeline-step">
                             <div class="step-number">3</div>
-                            <div class="step-content">
-                                <h4>Policy Learning</h4>
-                                <p>Develop robust control strategies through reinforcement learning and imitation learning</p>
+                            <h4>Contact & Force Extraction</h4>
+                            <div class="gif-container">
+                                <img src="assets/gif/contact.gif" alt="Contact and Force Information" loading="lazy">
                             </div>
-                        </div>
-                        <div class="workflow-step">
-                            <div class="step-number">4</div>
-                            <div class="step-content">
-                                <h4>Real-World Transfer</h4>
-                                <p>Deploy trained policies to physical robots with minimal performance gap</p>
-                            </div>
+                            <p>Extracting contact points and force information from simulator that are unavailable in raw mocap data</p>
                         </div>
                     </div>
                 </div>
