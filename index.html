@@ -15,10 +15,12 @@
             <div class="nav-brand">DexCanvas</div>
             <ul class="nav-menu">
                 <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#objects">Objects</a></li>
-                <li><a href="https://huggingface.co/datasets/DEXROBOT/DexCanvas" target="_blank">Dataset</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="#about">Overview</a></li>
+                <li><a href="#types-objects">Types & Objects</a></li>
+                <li><a href="#join-us">Join Us</a></li>
+                <li><a href="https://arxiv.org/pdf/2510.15786" target="_blank">Paper</a></li>
+                <li><a href="https://github.com/dexrobot/dexcanvas" target="_blank">Code</a></li>
+                <li><a href="https://huggingface.co/datasets/DEXROBOT/DexCanvas" target="_blank">Data</a></li>
             </ul>
             <div class="hamburger">
                 <span></span>
@@ -31,32 +33,86 @@
     <section id="home" class="hero">
         <div class="container">
             <div class="hero-content">
-                <h1 class="hero-title">Dexterous Manipulation Research</h1>
-                <p class="hero-subtitle">Exploring the frontiers of robotic dexterity and manipulation</p>
+                <h1 class="hero-title">DexCanvas: Bridging Human Demonstrations and Robot Learning for Dexterous Manipulation</h1>
+                <p class="hero-authors">
+                    Xinyue Xu*, Jieqiang Sun*, Jing (Daisy) Dai*,
+                    Siyuan Chen, Lanjie Ma, Ke Sun, Bin Zhao, Jianbo Yuan, Yiwen Lu
+                </p>
+                <p class="hero-affiliations">
+                    DexRobot Co. Ltd. · University of Michigan · Shanghai Jiao Tong University · Chongqing University ·
+                    East China University of Science and Technology
+                    <br>
+                    *Equal contribution
+                </p>
                 <div class="hero-buttons">
-                    <a href="#objects" class="btn btn-primary">View Objects</a>
-                    <a href="#contact" class="btn btn-secondary">Get In Touch</a>
+                    <a href="https://arxiv.org/pdf/2510.15786" class="btn btn-primary" target="_blank">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                            <polyline points="14 2 14 8 20 8"></polyline>
+                        </svg>
+                        arXiv
+                    </a>
+                    <a href="https://github.com/dexrobot/dexcanvas" class="btn btn-secondary" target="_blank">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                        </svg>
+                        GitHub
+                    </a>
+                    <a href="https://huggingface.co/datasets/DEXROBOT/DexCanvas" class="btn btn-secondary" target="_blank">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z"/>
+                        </svg>
+                        HuggingFace
+                    </a>
+                </div>
+                <p class="hero-subtitle">
+                    A large-scale hybrid real-synthetic dataset containing 7,000 hours of human manipulation data
+                    seeded from 70 hours of real demonstrations, organized across 21 fundamental manipulation types
+                    with physics-validated contact forces.
+                </p>
+                <div class="teaser-image">
+                    <img src="assets/images/paper/figure1.png" alt="DexCanvas Dataset Overview">
                 </div>
             </div>
         </div>
-        <div class="hero-background"></div>
     </section>
 
     <section id="about" class="section">
         <div class="container">
-            <h2 class="section-title">About DexCanvas</h2>
+            <h2 class="section-title">Dataset Overview</h2>
             <div class="about-content">
-                <p class="intro-text">DexCanvas is a comprehensive dataset and benchmark for <strong>dexterous manipulation research</strong>,
-                   developed by DexRobot Inc. to advance robotic control and learning capabilities.</p>
+                <p class="intro-text">
+                    DexCanvas is a large-scale hybrid real-synthetic human manipulation dataset containing 7,000 hours
+                    of dexterous hand-object interactions seeded from 70 hours of real human demonstrations. Each entry
+                    combines synchronized multi-view RGB-D, high-precision mocap with MANO hand parameters, and per-frame
+                    contact points with physically consistent force profiles.
+                </p>
 
-                <div class="highlight-box">
-                    <h3 class="highlight-title">🎯 Our Mission</h3>
-                    <p class="highlight-text">Enable robots to perform complex manipulation tasks with human-like dexterity
-                       through novel approaches in robotic control, reinforcement learning, and sim-to-real transfer.</p>
+                <div class="dataset-stats">
+                    <div class="stat-box">
+                        <div class="stat-icon">🎯</div>
+                        <div class="stat-value">Contact Forces</div>
+                        <div class="stat-description">Physics-validated per-frame contact points, force vectors, and object wrenches</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-icon">📊</div>
+                        <div class="stat-value">3.0B Frames</div>
+                        <div class="stat-description">100× expansion from 70 hours of real human demonstrations</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-icon">🤝</div>
+                        <div class="stat-value">21 Types</div>
+                        <div class="stat-description">Manipulation types from Cutkosky taxonomy</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-icon">🎲</div>
+                        <div class="stat-value">30 Objects</div>
+                        <div class="stat-description">Geometric primitives + YCB objects</div>
+                    </div>
                 </div>
 
                 <div class="workflow-section">
-                    <h3 class="section-subtitle-large">Workflow Overview</h3>
+                    <h3 class="section-subtitle-large">Data Processing Pipeline</h3>
                     <div class="workflow-pipeline">
                         <div class="pipeline-step">
                             <div class="step-number">1</div>
@@ -64,51 +120,58 @@
                             <div class="gif-container">
                                 <img src="assets/gif/mocap.gif" alt="Motion Capture Data Collection" loading="lazy">
                             </div>
-                            <p>Collecting manipulation trajectories from motion capture systems</p>
+                            <p>22-camera optical mocap system captures hand kinematics and object trajectories at 30 Hz</p>
                         </div>
                         <div class="pipeline-arrow">→</div>
                         <div class="pipeline-step">
                             <div class="step-number">2</div>
-                            <h4>RL Trajectory Reconstruction</h4>
+                            <h4>RL-based Force Reconstruction</h4>
                             <div class="gif-container">
                                 <img src="assets/gif/rl_reconstruction.gif" alt="RL Trajectory Reconstruction" loading="lazy">
                             </div>
-                            <p>Bridging the real-to-sim gap through reinforcement learning reconstruction</p>
+                            <p>Reinforcement learning policies reproduce demonstrations in physics simulation to extract contact forces</p>
                         </div>
                         <div class="pipeline-arrow">→</div>
                         <div class="pipeline-step">
                             <div class="step-number">3</div>
-                            <h4>Contact & Force Extraction</h4>
+                            <h4>Physics-validated Annotations</h4>
                             <div class="gif-container">
                                 <img src="assets/gif/contact.gif" alt="Contact and Force Information" loading="lazy">
                             </div>
-                            <p>Extracting contact points and force information from simulator that are unavailable in raw mocap data</p>
+                            <p>Per-frame contact points, force vectors, and object wrenches measured from simulator</p>
                         </div>
-                    </div>
-                </div>
-
-                <div class="key-features">
-                    <div class="feature-item">
-                        <span class="feature-number">20+</span>
-                        <span class="feature-label">Objects</span>
-                    </div>
-                    <div class="feature-item">
-                        <span class="feature-number">Multi-Modal</span>
-                        <span class="feature-label">Sensory Data</span>
-                    </div>
-                    <div class="feature-item">
-                        <span class="feature-number">Sim2Real</span>
-                        <span class="feature-label">Transfer Ready</span>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="objects" class="section">
+    <section id="types-objects" class="section section-light">
         <div class="container">
-            <h2 class="section-title">Object Library</h2>
-            <p class="section-subtitle">Diverse manipulation objects for research and benchmarking</p>
+            <h2 class="section-title">Manipulation Types & Objects</h2>
+
+            <div class="collapsible-section">
+                <button class="collapsible-header">
+                    <h3>21 Manipulation Types from Cutkosky Taxonomy</h3>
+                    <span class="collapse-icon">▼</span>
+                </button>
+                <div class="collapsible-content">
+                    <p class="section-subtitle">
+                        The taxonomy hierarchically organizes manipulation strategies into four main categories: Power (whole-hand grasps),
+                        Intermediate (transitional grasps), Precision (fingertip control), and In-hand Manipulation (dynamic reorientation).
+                    </p>
+                    <div class="taxonomy-container">
+                        <img src="assets/images/paper/figure_taxonomy.png" alt="Cutkosky Taxonomy of 21 Manipulation Types" class="taxonomy-image">
+                    </div>
+                </div>
+            </div>
+
+            <div class="collapsible-section">
+                <button class="collapsible-header">
+                    <h3>30 Objects (Geometric Primitives + YCB Objects)</h3>
+                    <span class="collapse-icon">▼</span>
+                </button>
+                <div class="collapsible-content">
             <div class="objects-gallery">
                 <div class="object-item">
                     <img src="assets/images/objects/powerdrill.png" alt="Power Drill">
@@ -191,42 +254,32 @@
                     <div class="object-label">Cylinder 6</div>
                 </div>
             </div>
+                </div>
+            </div>
         </div>
     </section>
 
-    <section id="contact" class="section section-dark">
+    <section id="join-us" class="section join-section">
         <div class="container">
-            <h2 class="section-title">Get In Touch</h2>
-            <div class="contact-content">
-                <p>Interested in collaboration or have questions about our research?</p>
-                <div class="social-links">
-                    <a href="https://github.com/dexrobot" class="social-link" target="_blank">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
-                        </svg>
-                        GitHub
-                    </a>
-                    <a href="https://huggingface.co/datasets/DEXROBOT/DexCanvas" class="social-link" target="_blank">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-1-13h2v6h-2zm0 8h2v2h-2z"/>
-                        </svg>
-                        Dataset
-                    </a>
-                    <a href="mailto:support@dex-robot.com" class="social-link">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
-                            <polyline points="22,6 12,13 2,6"></polyline>
-                        </svg>
-                        Email
-                    </a>
-                    <a href="https://www.dex-robot.com/" class="social-link" target="_blank">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <circle cx="12" cy="12" r="10"></circle>
-                            <line x1="2" y1="12" x2="22" y2="12"></line>
-                            <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
-                        </svg>
-                        Website
-                    </a>
+            <h2 class="section-title">Join Us</h2>
+            <div class="join-content">
+                <p class="join-intro">
+                    DexCanvas represents our first step toward building foundation models for high-DOF dexterous manipulation.
+                    We're tackling the full complexity of 30+ degree-of-freedom hand-object interactions—transforming how robots
+                    learn to manipulate the physical world with human-level dexterity.
+                </p>
+                <div class="join-details">
+                    <div class="join-card">
+                        <h3>Research Scientist & PhD Internships</h3>
+                        <p>Working at the intersection of foundation models and embodied AI, you'll help shape how robots learn complex manipulation through large-scale learning from human demonstrations and physics-grounded simulation.</p>
+                        <p><strong>PhD students seeking internships are especially welcome.</strong> Flexible duration (3-6 months).</p>
+                    </div>
+                    <div class="join-card">
+                        <h3>Location & Contact</h3>
+                        <p>Shanghai, China</p>
+                        <p>Contact: <a href="mailto:lyw@dex-robot.com">lyw@dex-robot.com</a></p>
+                        <p>Learn more: <a href="https://www.dex-robot.com/" target="_blank">dex-robot.com</a></p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -234,8 +287,16 @@
 
     <footer class="footer">
         <div class="container">
-            <p>&copy; 2025 DexRobot Inc. All rights reserved.</p>
-            <p class="footer-note">Built with passion for advancing robotics research</p>
+            <div class="footer-content">
+                <div class="footer-section contact">
+                    <h3>Contact</h3>
+                    <p>Academic inquiries: <a href="mailto:lyw@dex-robot.com">lyw@dex-robot.com</a></p>
+                    <p>Business collaboration / licensing: <a href="mailto:info@dex-robot.com">info@dex-robot.com</a></p>
+                    <p>Website: <a href="https://www.dex-robot.com/" target="_blank">dex-robot.com</a></p>
+                </div>
+
+                <p class="footer-copyright">&copy; 2025 DexRobot Co. Ltd. All rights reserved.</p>
+            </div>
         </div>
     </footer>
 
