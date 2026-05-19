@@ -16,6 +16,11 @@ git clone https://github.com/yourusername/dexCanvas.git
 cd dexCanvas
 ```
 
+If you need the paper source, initialize the Overleaf submodule:
+```bash
+git submodule update --init --recursive
+```
+
 2. Open `index.html` in your browser:
 ```bash
 # On Linux (Manjaro)
@@ -125,10 +130,6 @@ Contributions are welcome! Feel free to:
 3. Commit your changes (`git commit -m 'Add some amazing feature'`)
 4. Push to the branch (`git push origin feature/amazing-feature`)
 5. Open a Pull Request
-
-## 📧 Contact
-
-For questions or collaboration opportunities, please reach out through the contact section on the website.
 
 ## 🌟 Acknowledgments
 
