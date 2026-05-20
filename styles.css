@@ -166,6 +166,127 @@ body {
     height: auto;
 }
 
+.dexhand-gallery {
+    max-width: 1120px;
+    margin: 2.5rem auto 0;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--border-color);
+    text-align: left;
+}
+
+.dexhand-gallery-header {
+    text-align: center;
+    margin-bottom: 1.25rem;
+}
+
+.dexhand-gallery-header h2 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--text-primary);
+}
+
+.dexhand-row {
+    margin-top: 1.5rem;
+}
+
+.dexhand-row-label {
+    margin-bottom: 0.75rem;
+    color: var(--primary-color);
+    font-size: 0.95rem;
+    font-weight: 700;
+    line-height: 1.35;
+    text-align: center;
+}
+
+.dexhand-grid {
+    display: grid;
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+    gap: 0.75rem;
+    overflow: visible;
+}
+
+.dexhand-video {
+    margin: 0;
+    min-width: 0;
+    position: relative;
+    z-index: 0;
+}
+
+.dexhand-video figcaption {
+    display: flex;
+    flex-direction: column;
+    gap: 0.1rem;
+    min-height: 2.35rem;
+    margin-bottom: 0.35rem;
+    color: var(--text-primary);
+    font-size: 0.72rem;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+.dexhand-video figcaption span:last-child {
+    color: var(--text-secondary);
+    font-size: 0.68rem;
+    font-weight: 500;
+}
+
+.dexhand-video video {
+    display: block;
+    width: 100%;
+    aspect-ratio: 1664 / 2037;
+    object-fit: cover;
+    background: var(--light-card);
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    transform-origin: center center;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .dexhand-video:hover {
+        z-index: 20;
+    }
+
+    .dexhand-video:hover video {
+        border-color: var(--primary-color);
+        box-shadow: 0 16px 36px rgba(15, 23, 42, 0.22);
+        cursor: zoom-in;
+        transform: scale(2);
+    }
+
+    .dexhand-video:nth-child(6n + 1) video {
+        transform-origin: left center;
+    }
+
+    .dexhand-video:nth-child(6n) video {
+        transform-origin: right center;
+    }
+}
+
+@media (hover: hover) and (pointer: fine) and (max-width: 768px) {
+    .dexhand-video:nth-child(n) video {
+        transform-origin: center center;
+    }
+
+    .dexhand-video:nth-child(2n + 1) video {
+        transform-origin: left center;
+    }
+
+    .dexhand-video:nth-child(2n) video {
+        transform-origin: right center;
+    }
+}
+
+@media (hover: hover) and (pointer: fine) and (max-width: 480px) {
+    .dexhand-video:hover video {
+        transform: scale(1.2);
+    }
+
+    .dexhand-video:nth-child(n) video {
+        transform-origin: center center;
+    }
+}
+
 /* Buttons */
 .btn {
     padding: 0.625rem 1.5rem;
@@ -359,16 +480,14 @@ body {
 
 /* Workflow Pipeline */
 .workflow-pipeline {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     align-items: center;
-    justify-content: center;
     gap: 1.5rem;
     margin-top: 3rem;
 }
 
 .pipeline-step {
-    flex: 1;
-    max-width: 350px;
     text-align: center;
     padding: 1rem;
     background: white;
@@ -418,8 +537,69 @@ body {
     border-radius: 8px;
 }
 
+.downstream-validation {
+    margin-top: 2rem;
+    padding: 1.25rem;
+    background: white;
+    border: 2px solid var(--border-color);
+    border-radius: 16px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    text-align: center;
+}
+
+.downstream-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+}
+
+.downstream-header .step-number {
+    margin: 0;
+}
+
+.downstream-header h4 {
+    color: var(--text-primary);
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+
+.downstream-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1rem;
+    margin: 0.75rem 0;
+}
+
+.downstream-grid figure {
+    min-width: 0;
+    margin: 0;
+}
+
+.downstream-grid .gif-container {
+    margin: 0;
+}
+
+.downstream-grid figcaption {
+    margin-top: 0.5rem;
+    color: var(--text-primary);
+    font-size: 0.85rem;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+.downstream-validation p {
+    margin: 0.85rem auto 0;
+    max-width: 720px;
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
 .pipeline-arrow {
-    font-size: 2.5rem;
+    display: none;
+    font-size: 1.75rem;
     color: var(--primary-color);
     font-weight: bold;
     flex-shrink: 0;
@@ -474,60 +654,6 @@ body {
 .research-card p {
     color: #94a3b8;
     line-height: 1.6;
-}
-
-/* Join Us Section */
-.join-section {
-    background: linear-gradient(135deg, rgba(40, 191, 202, 0.05) 0%, rgba(26, 161, 172, 0.02) 100%);
-}
-
-.join-content {
-    max-width: 900px;
-    margin: 0 auto;
-}
-
-.join-intro {
-    font-size: 1.125rem;
-    color: var(--text-primary);
-    line-height: 1.8;
-    text-align: center;
-    margin-bottom: 2rem;
-}
-
-.join-details {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
-}
-
-.join-card {
-    background: white;
-    padding: 2rem;
-    border-radius: 8px;
-    border: 2px solid var(--primary-color);
-}
-
-.join-card h3 {
-    color: var(--primary-color);
-    font-size: 1.25rem;
-    margin-bottom: 1rem;
-    font-weight: 600;
-}
-
-.join-card p {
-    color: var(--text-secondary);
-    line-height: 1.6;
-    margin: 0.5rem 0;
-}
-
-.join-card a {
-    color: var(--primary-color);
-    text-decoration: none;
-    font-weight: 500;
-}
-
-.join-card a:hover {
-    text-decoration: underline;
 }
 
 /* Collapsible Sections */
@@ -874,6 +1000,10 @@ body {
         align-items: center;
     }
 
+    .dexhand-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
     .section-title {
         font-size: 2rem;
     }
@@ -901,12 +1031,18 @@ body {
     }
 
     .workflow-pipeline {
+        display: flex;
         flex-direction: column;
         gap: 2rem;
     }
 
     .pipeline-step {
+        width: 100%;
         max-width: 100%;
+    }
+
+    .downstream-grid {
+        grid-template-columns: 1fr;
     }
 
     .pipeline-arrow {
@@ -956,6 +1092,10 @@ body {
     }
 
     .stats {
+        grid-template-columns: 1fr;
+    }
+
+    .dexhand-grid {
         grid-template-columns: 1fr;
     }
 }

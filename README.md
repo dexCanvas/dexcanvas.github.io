@@ -126,10 +126,6 @@ Contributions are welcome! Feel free to:
 4. Push to the branch (`git push origin feature/amazing-feature`)
 5. Open a Pull Request
 
-## 📧 Contact
-
-For questions or collaboration opportunities, please reach out through the contact section on the website.
-
 ## 🌟 Acknowledgments
 
 - Research supported by [Your Institution/Grant]
