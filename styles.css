@@ -916,54 +916,6 @@ body {
     text-decoration: underline;
 }
 
-/* Footer */
-.footer {
-    background: #020617;
-    color: #94a3b8;
-    padding: 3rem 0 2rem;
-}
-
-.footer-content {
-    max-width: 900px;
-    margin: 0 auto;
-}
-
-.footer-section {
-    margin-bottom: 2rem;
-    text-align: center;
-}
-
-.footer-section h3 {
-    color: white;
-    font-size: 1.1rem;
-    margin-bottom: 0.75rem;
-    font-weight: 600;
-}
-
-.footer-section p {
-    margin: 0.5rem 0;
-    font-size: 0.9rem;
-    line-height: 1.6;
-}
-
-.footer-section a {
-    color: var(--primary-color);
-    text-decoration: none;
-}
-
-.footer-section a:hover {
-    text-decoration: underline;
-}
-
-.footer-copyright {
-    text-align: center;
-    font-size: 0.85rem;
-    color: #64748b;
-    margin-top: 2rem;
-    padding-top: 1.5rem;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-}
-
 /* Responsive Design */
 @media (max-width: 768px) {
     .hamburger {
