@@ -480,16 +480,14 @@ body {
 
 /* Workflow Pipeline */
 .workflow-pipeline {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     align-items: center;
-    justify-content: center;
     gap: 1.5rem;
     margin-top: 3rem;
 }
 
 .pipeline-step {
-    flex: 1;
-    max-width: 350px;
     text-align: center;
     padding: 1rem;
     background: white;
@@ -539,8 +537,69 @@ body {
     border-radius: 8px;
 }
 
+.downstream-validation {
+    margin-top: 2rem;
+    padding: 1.25rem;
+    background: white;
+    border: 2px solid var(--border-color);
+    border-radius: 16px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    text-align: center;
+}
+
+.downstream-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+}
+
+.downstream-header .step-number {
+    margin: 0;
+}
+
+.downstream-header h4 {
+    color: var(--text-primary);
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+
+.downstream-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1rem;
+    margin: 0.75rem 0;
+}
+
+.downstream-grid figure {
+    min-width: 0;
+    margin: 0;
+}
+
+.downstream-grid .gif-container {
+    margin: 0;
+}
+
+.downstream-grid figcaption {
+    margin-top: 0.5rem;
+    color: var(--text-primary);
+    font-size: 0.85rem;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+.downstream-validation p {
+    margin: 0.85rem auto 0;
+    max-width: 720px;
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
 .pipeline-arrow {
-    font-size: 2.5rem;
+    display: none;
+    font-size: 1.75rem;
     color: var(--primary-color);
     font-weight: bold;
     flex-shrink: 0;
@@ -972,12 +1031,18 @@ body {
     }
 
     .workflow-pipeline {
+        display: flex;
         flex-direction: column;
         gap: 2rem;
     }
 
     .pipeline-step {
+        width: 100%;
         max-width: 100%;
+    }
+
+    .downstream-grid {
+        grid-template-columns: 1fr;
     }
 
     .pipeline-arrow {
